@@ -7,6 +7,6 @@ import lombok.Data;
 @AllArgsConstructor
 public class RestApiClientException extends RuntimeException {
 
-    private String message;
-    private String requestUrl;
+    private final String message;
+    private final String requestUrl;
 }

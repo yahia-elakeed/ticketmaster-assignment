@@ -13,8 +13,8 @@ import lombok.ToString;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VenueDTO {
 
-    public Long id;
-    public String name;
-    public String url;
-    public String city;
+    private Long id;
+    private String name;
+    private String url;
+    private String city;
 }

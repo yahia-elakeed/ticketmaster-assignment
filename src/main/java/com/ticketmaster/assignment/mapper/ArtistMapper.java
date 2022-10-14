@@ -8,12 +8,10 @@ import org.springframework.stereotype.Component;
 public class ArtistMapper extends BaseMapper {
 
     public ArtistDTO convertToDto(Artist artist) {
-        ArtistDTO artistDTO = modelMapper.map(artist, ArtistDTO.class);
-        return artistDTO;
+        return modelMapper.map(artist, ArtistDTO.class);
     }
 
-    private Artist convertToModel(ArtistDTO ArtistDTO) {
-        Artist artist = modelMapper.map(ArtistDTO, Artist.class);
-        return artist;
+    private Artist convertToModel(ArtistDTO artistDTO) {
+        return modelMapper.map(artistDTO, Artist.class);
     }
 }

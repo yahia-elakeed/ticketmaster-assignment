@@ -1,12 +1,11 @@
 package com.ticketmaster.assignment.service.impl;
 
-import com.ticketmaster.assignment.dto.ArtistDTO;
+import com.ticketmaster.assignment.client.EventClient;
 import com.ticketmaster.assignment.dto.EventDTO;
 import com.ticketmaster.assignment.mapper.EventMapper;
 import com.ticketmaster.assignment.model.Artist;
 import com.ticketmaster.assignment.service.EventService;
 import com.ticketmaster.assignment.service.VenueService;
-import com.ticketmaster.assignment.client.EventClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;

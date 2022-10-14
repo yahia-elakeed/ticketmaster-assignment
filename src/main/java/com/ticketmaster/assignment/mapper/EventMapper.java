@@ -8,13 +8,10 @@ import org.springframework.stereotype.Component;
 public class EventMapper extends BaseMapper {
 
     public EventDTO convertToDto(Event event) {
-        EventDTO eventDTO = modelMapper.map(event, EventDTO.class);
-        return eventDTO;
+        return modelMapper.map(event, EventDTO.class);
     }
 
     private Event convertToModel(EventDTO eventDTO) {
-        Event event = modelMapper.map(eventDTO, Event.class);
-        return event;
+        return modelMapper.map(eventDTO, Event.class);
     }
-
 }

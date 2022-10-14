@@ -11,17 +11,15 @@ import java.time.LocalDateTime;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    private final static String ERROR_CONNECT_TO_TM_SERVER = "Error while trying to connect to ticketmaster server!";
-    private final static String ERROR_COMPLETE_REQUEST = "Error while trying to complete the request!";
+    private static final  String ERROR_CONNECT_TO_TM_SERVER = "Error while trying to connect to ticketmaster server!";
+    private static final  String ERROR_COMPLETE_REQUEST = "Error while trying to complete the request!";
 
     @ExceptionHandler(Exception.class)
     public final ResponseEntity<ClientError> handleException(Exception exception) {
 
         ClientError clientError;
 
-        if (exception instanceof RestApiClientException) {
-
-            RestApiClientException restApiClientException = (RestApiClientException) exception;
+        if (exception instanceof RestApiClientException restApiClientException) {
 
             clientError = new ClientError(LocalDateTime.now(),
                     restApiClientException.getRequestUrl(),
@@ -36,5 +34,10 @@ public class GlobalExceptionHandler {
         }
 
         return new ResponseEntity<>(clientError, HttpStatus.SERVICE_UNAVAILABLE);
+    }
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public final ResponseEntity<ResourceNotFoundException> handleException(ResourceNotFoundException resourceNotFoundException) {
+        throw  resourceNotFoundException;
     }
 }

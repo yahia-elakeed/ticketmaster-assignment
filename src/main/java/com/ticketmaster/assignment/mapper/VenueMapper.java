@@ -8,13 +8,11 @@ import org.springframework.stereotype.Component;
 public class VenueMapper extends BaseMapper {
 
     public VenueDTO convertToDto(Venue venue) {
-        VenueDTO venueDTO = modelMapper.map(venue, VenueDTO.class);
-        return venueDTO;
+        return modelMapper.map(venue, VenueDTO.class);
     }
 
     public Venue convertToModel(VenueDTO venueDTO) {
-        Venue venue = modelMapper.map(venueDTO, Venue.class);
-        return venue;
+        return modelMapper.map(venueDTO, Venue.class);
     }
 
 }
